@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Sentiment Analysis</title>
+	</head>
+	
+	<body>
+	
+		<form action="{{url_for('sentiment_analysis')}}" method="POST">
+		
+			<textarea id="textarea"	rows="4" cols="50" name="Sentiment"></textarea>
+			<br><br>
+			<input type="submit" value="check sentiment">
+				<br>
+				<br>
+					{{review}}
+					<br>
+					{% if sentiment == 'POSITIVE' %}
+						<span style="color:blue;">Review is positive</span>
+					{% elif sentiment == 'NEGATIVE' %}
+						<span style="color:red;">Review is negative</span>
+					{% endif %}
+			
+		</form>
+		
+	</body>
+</html>
