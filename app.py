@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 from transformers import pipeline
 model = pipeline("sentiment-analysis")
-import webbrowser
 
 app = Flask(__name__)
-webbrowser.open_new("http://127.0.0.1:5000/sentiment_analysis")
 
 @app.route("/sentiment_analysis", methods=['GET', 'POST'])
 def sentiment_analysis():
